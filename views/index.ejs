@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c71d3a379a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>My movie</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="movie-card" style="background-image: <%= card %>">
+
+            <div class="movie-poster-container">
+                <img class="movie-poster" src="<%= moviePoster %>" alt="Poster">
+            </div>
+
+            <div class="movie-info-container">
+
+                <h1 class="movie-title"><%= movieData.title %></h1>
+
+                <p class="movie-genres-area">
+                    <span class="movie-rating">PG-13</span>
+                    <span class="movie-release-date"><%= releaseDate %></span>
+                    <span class="movie-genres"><%= genres %></span>
+                    <span class="movie-duration"><%= movieData.runtime %></span>
+                </p>
+
+                <div class="movie-actions">
+                    <ul>
+                        <li><a id="m-a1" href="#"><i class="fa-solid fa-heart"></i></a></li>
+                        <li><a id="m-a2" href="#"><i class="fa-solid fa-bookmark"></i></a></li>
+                        <li><a id="m-a3" href="#"><i class="fa-solid fa-star"></i></a></li>
+                        <li><a id="m-a4" href="/about"><i class="fa-sharp fa-solid fa-question"></i></a></li>
+                    </ul>
+                </div>
+
+                <p class="movie-quote"><%= movieData.tagline %></p>
+
+                <h2 class="movie-overview-title">overview</h2>
+
+                <p class="movie-overview"><%= movieData.overview %></p>
+
+            </div>
+        </div>
+
+        <footer>
+            <h3>Find me to discuss the movie</h3>
+            <ul>
+                <li><a href="#">Twitter <i class="fa-brands fa-square-twitter"></i></a></li>
+                <li><a href="#">Instagram <i class="fa-brands fa-square-instagram"></i></a></li>
+                <li><a href="#">Facebook <i class="fa-brands fa-square-facebook"></i></a></i></li>
+            </ul>
+            <ul>A.T © <span class="year"><%= year %></span></ul>
+        </footer>
+
+    </div>
+
+    <script src="scripts/app.js"></script>
+    
+</body>
+</html>

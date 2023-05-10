@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Rubik+Vinyl&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: #1e1e1e;
+    color: #bbbbbb;
+    animation: bg-color 20s infinite linear;
+}
+
+@keyframes bg-color{
+    0%{
+        background-color: #00001e;
+    }
+    33%{
+        background-color: #001022;
+    }
+    67%{
+        background-color: #100022;
+    }
+    100%{
+        background-color: #00001e;
+    }
+}
+
+.movie-card{
+    height: 65vh;
+    margin-top: 5rem;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 10rem #111111;
+}
+
+.movie-poster-container{
+    height: 85%;
+    width: 30%;
+    text-align: center;
+    position: relative;
+    left: -50rem;
+    animation: slide-from-left 1.5s ease-in-out forwards;
+}
+
+@keyframes slide-from-left{
+    80%{
+        left: 0.5rem;
+    }
+    100%{
+        left: 0rem;
+    }
+}
+
+.movie-poster{
+    height: 100%;
+    border-radius: 1rem;
+    margin-right: 2rem;
+    cursor: pointer;
+}
+
+.movie-poster:hover{
+    transform: scale(1.025);
+    box-shadow: 1rem 1rem 1rem -0.5rem #000000cc;
+    transition: 0.5s;
+}
+
+.movie-info-container{
+    height: 100%;
+    width: 70%;
+    padding-top: 2rem;
+    overflow: hidden;
+}
+
+.movie-info-container > *:not(.movie-title){
+    opacity: 0;
+    animation: fade-in 1s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fade-in{
+    100%{
+        opacity: 1;
+    }
+}
+
+.movie-title{
+    margin-top: 2rem;
+    text-transform: capitalize;
+    transform: translateY(-15rem);
+    animation: slide-from-top 1.5s ease-in-out forwards;
+}
+
+@keyframes slide-from-top{
+    80%{
+        transform: translateY(0.25rem);
+    }
+    100%{
+        transform: translateY(0rem);
+    }
+}
+
+.movie-genres-area{
+    margin-top: 1.25rem;
+}
+
+.movie-rating{
+    border: 1px solid #808080;
+    border-radius: 0.25rem;
+    color: #808080;
+    padding: 0.25rem;
+}
+
+.movie-duration{
+    margin: 0.5rem;
+    letter-spacing: 0.1rem;
+}
+
+.movie-release-date{
+    margin-left: 0.5rem;
+}
+
+.movie-duration:before{
+    content: "\2022  ";
+}
+
+.movie-actions{
+    font-size: 1.1rem;
+}
+
+.movie-actions ul{
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.movie-actions ul li{
+    display: inline-block;
+    margin-right: 2rem;
+    background-color: #111131;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.movie-actions ul li a{
+    text-decoration: none;
+    color: #cccccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    transition: all 0.25s;
+}
+
+.movie-actions ul li a:hover{
+    transform: scale(1.25);
+}
+
+#m-a1:hover{
+    color: #cc0000;
+}
+
+#m-a2:hover{
+    color: #683a14;
+}
+
+#m-a3:hover{
+    color: #cccc00;
+}
+
+#m-a4:hover{
+    color: #00cccc;
+}
+
+.movie-actions ul li a:active{
+    transform: scale(1.1);
+}
+
+.movie-quote{
+    font-style: italic;
+    color: #808080;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+}
+
+.movie-overview-title{
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+}
+
+.movie-overview{
+    width: 55%;
+}
+
+
+.movie-people{
+    margin-top: 2rem;
+    list-style: none;
+}
+
+.movie-people li{
+    margin-right: 10rem;
+}
+
+.movie-people li p:first-child{
+    font-weight: 700;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: #0f0f0fbb;
+    margin: 0 auto;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    text-align: center;
+    animation: fade-in-modal 0.5s;
+}
+
+@keyframes fade-in-modal {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+
+.modal-content{
+    text-align: center;
+    background-color: #000000aa;
+    margin: 5vh auto;
+    padding: 5rem;
+    max-width: 75%;
+    height: 80vh;
+    border-radius: 1rem;
+    animation: zoom-in 0.5s;
+}
+
+@keyframes zoom-in {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+    
+}
+
+.modal h1{
+    font-family: 'Rubik Vinyl', cursive;
+    color: #cccccc4b;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    font-size: 5vh;
+    margin-top: 7.5vh;
+    width: 100%;
+}
+
+.close-btn{
+    margin-top: -3.5vh;
+    margin-right: -2.5vh;
+    float: right;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.close-btn:hover{
+    transform: scale(1.25);
+    transition: 0.25s;
+    color: #ffffff;
+}
+
+.movie-poster-modal{
+    width: 30vh;
+    border-radius: 0.5rem;
+    margin: 0.75rem;
+}
+
+footer{
+    margin-top: 2rem;
+    text-align: center;
+    color: #808080;
+    opacity: 0;
+    animation: fade-in-footer 1s ease-in-out forwards;
+    animation-delay: 1.25s;
+}
+
+@keyframes fade-in-footer{
+    100%{
+        opacity: 1;
+    }
+}
+
+footer ul li{
+    display: inline-block;
+    margin: 2rem 2rem;
+    font-size: 1.5rem;
+}
+
+footer li a{
+    color: #808080;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+footer li a:hover{
+    color: #cccccc;
+    transition: 0.25s;
+}
